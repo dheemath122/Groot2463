@@ -1,0 +1,10 @@
+def display_file_with_line_numbers(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            lines = file.readlines()
+            for i, line in enumerate(lines, start=1):
+                print(f"{i}: {line.strip()}")
+    except FileNotFoundError:
+        print("File not found.")
+file_name = input("Enter the file name: ")
+display_file_with_line_numbers(file_name)
