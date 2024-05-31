@@ -1,0 +1,9 @@
+def display_sorted_records(file_name):
+    try:
+        with open(file_name, 'r') as file:
+            records = [line.strip().split(',') for line in file.readlines()]
+            sorted_records = sorted(records, key=lambda x: x[0])  # Sort by name
+            for record in sorted_records:
+                print(f"Name: {record[0]}, Age: {record[1]}")
+    except FileNotFoundError:
+        print("File name.")
